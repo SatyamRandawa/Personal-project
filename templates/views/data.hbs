@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  {{!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"  --}}
+    {{!-- integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+
+{{!-- <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">name</th>
+      <th scope="col">country</th>
+      <th scope="col">state</th>
+      <th scope="col">city</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+   
+  </tbody>
+</table> --}}
+
+{{> navbar}}
+
+<div class="container">
+  {{!-- <h2>{{title}}</h2> --}}
+  <h2>Hii {{data.name}} Your Record👇🏻</h2>
+  <br>
+  <p></p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Country</th>
+        <th>State</th>
+        <th>City</th>
+        {{!-- <button type="button" class="btn btn-danger py-6">Danger</button>
+        <button type="button" class="btn btn-success">Success</button> --}}
+        <a class="btn btn-danger " href="/Delete" role="button">Delete</a>
+        <a class="btn btn-primary" href="/Edit" role="button">Edit </a>
+      </tr>
+    </thead>
+    <tbody>
+        
+      <tr>
+        {{!-- <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td>john@example.com</td> --}}
+        <td>{{data.name}}</td>
+        <td>{{data.country}}</td>
+        <td>{{data.state}}</td>
+        <td>{{data.city}}</td>
+        
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
