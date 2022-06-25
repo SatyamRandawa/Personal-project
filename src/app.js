@@ -18,10 +18,10 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
-//const views = require("../templates/partials")
+const views = require("../templates/views")
 
  
-const static_path = path.join(__dirname, "./views");
+const static_path = path.join(__dirname, "../templates/views");//./views
 const template_path = path.join(__dirname, "../templates/views");
 const template_partials = path.join(__dirname, "../templates/partials");
 
