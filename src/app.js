@@ -81,6 +81,25 @@ app.post("/Register", async (req, res) =>{
         //     res.send( "email already exist")
         //   }
 
+        if(Object.keys(req.body.name).length == 0){
+             res.send("Please enter name")
+        } 
+        if(!req.body.country){
+            return res.status(400).send("Please enter country")
+        }
+        if(!req.body.state){
+            return res.status(400).send("Please enter state")
+        }
+        if(!req.body.city){
+            return res.status(400).send("Please enter city")
+        }
+        if(!req.body.email){
+            return res.status(400).send("Please enter email")
+        }
+        if(!req.body.password){
+            return res.status(400).send("Please enter password")
+        }
+
         let checkEmail = await userModel.findOne({email:req.body.email})
         if(checkEmail){
            return res.send("This Email is already registered go for login")
@@ -100,6 +119,14 @@ app.post("/Register", async (req, res) =>{
 app.post("/Login", async (req, res) => {
 
    try{
+
+    if(!req.body.email){
+        return res.status(400).send("Please enter email for login")
+    }
+
+    if(!req.body.password){
+        return res.status(400).send("Please enter password for login")
+    }
 
     let checkEmail = await userModel.findOne({email:req.body.email })
     if(!checkEmail){
